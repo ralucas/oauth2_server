@@ -1,0 +1,23 @@
+swagger: '2.0'
+info:
+  title: Oauth 2.0 Server
+  description: Oauth 2.0 Server written in Elixir
+  version: "1.0.0"
+host: auth.lucashost.org
+schemes:
+  - https
+basePath: /
+produces:
+  - application/vnd.api+json
+paths:
+  /heartbeat:
+    get:
+      responses:
+        200:
+  /registration:
+    get:
+      responses:
+        200:
+    post:
+      responses:
+        201:
