@@ -8,7 +8,7 @@ defmodule Oauth2Server do
 
     children = [
       # Define workers and child supervisors to be supervised
-      Plug.Adapters.Cowboy.child_spec(:http, Oauth2Router, [], [port: 4000])
+      Plug.Adapters.Cowboy.child_spec(:http, Routes.Main, [], [port: 4000])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -1,4 +1,4 @@
-defmodule Oauth2Router do
+defmodule Routes.Main do
   use Plug.Router
 
   if Mix.env == :dev do
@@ -33,7 +33,7 @@ defmodule Oauth2Router do
     |> send_resp(200, msg)
   end
 
-  forward "/registration", to: RegistrationRouter
+  forward "/registration", to: Routes.Registration
 
   match _ do
     {:ok, msg} = Poison.encode(%{
