@@ -21,6 +21,8 @@ defmodule Routes.Registration do
 
   ###
   post "/" do
-    Controllers.Registration.create(conn)
+    conn
+      |> put_resp_content_type("application/vnd.api+json")
+      |> send_resp(201, conn.body_params)
   end
 end

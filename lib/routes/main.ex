@@ -5,7 +5,11 @@ defmodule Routes.Main do
     use Plug.Debugger
   end
 
+  plug Plug.Logger
   plug :match
+  plug Plug.Parsers, parsers: [:json],
+                     pass:  ["application/vnd.api+json"],
+                     json_decoder: Poison
   plug :dispatch
 
   get "/" do
@@ -29,8 +33,8 @@ defmodule Routes.Main do
       }
     })
     conn
-    |> put_resp_content_type("application/vnd.api+json")
-    |> send_resp(200, msg)
+      |> put_resp_content_type("application/vnd.api+json")
+      |> send_resp(200, msg)
   end
 
   forward "/registration", to: Routes.Registration
