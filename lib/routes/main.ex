@@ -17,7 +17,7 @@ defmodule Routes.Main do
     |> put_resp_content_type("application/vnd.api+json")
     |> send_resp(200, Poison.encode!(%{
         "jsonapi" => %{
-          "version" => "1.0"
+          "version" => "1.0.0"
         },
         "meta" => %{
           "title" => "Oauth 2.0 Server"
