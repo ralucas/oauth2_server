@@ -1,6 +1,9 @@
 # Oauth2Server
 
-**TODO: Add description**
+[![Build Status](https://travis-ci.org/ralucas/oauth2_server.svg?branch=master)](https://travis-ci.org/ralucas/oauth2_server)
+
+## Introduction
+Oauth 2.0 Server in Elixir
 
 ## Installation
 
