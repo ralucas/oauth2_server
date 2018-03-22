@@ -6,16 +6,15 @@ defmodule Routes.Main do
   end
 
   plug Plug.Logger
+  plug Plug.Static,
+       at: "/assets",
+       from: Path.join([System.get_env("HOME"), "Projects/oauth2_server/lib/assets"])
   plug :match
-
   plug Plug.Parsers, parsers: [:json],
                      pass:  ["application/vnd.api+json"],
                      json_decoder: Poison
   plug :dispatch
 
-  plug Plug.Static,
-     at: "assets",
-     from: :oauth2_server
 
   get "/" do
     conn
