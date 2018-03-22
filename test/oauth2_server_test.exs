@@ -23,7 +23,7 @@ defmodule Oauth2ServerTest do
     assert title == "Oauth 2.0 Server"
 
     version= get_in(resp, ["jsonapi"]) |> get_in(["version"])
-    assert version == "1.0.0"
+    assert version == "1.0"
 
   end
 

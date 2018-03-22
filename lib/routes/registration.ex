@@ -13,10 +13,14 @@ defmodule Routes.Registration do
   # Displays a username/password
   # registration form
   get "/" do
-    {_, _, [_, html]} = EEx.compile_file(Path.expand("./lib/views/templates/registration.html.eex"))
+    params = Application.get_env(:oauth2_server, :registration)
+    html = EEx.eval_file(
+      Path.expand("./lib/views/templates/registration.html.eex"),
+      params
+    )
     conn
-    |> put_resp_content_type("text/html")
-    |> send_resp(200, html)
+      |> put_resp_content_type("text/html")
+      |> send_resp(200, html)
   end
 
   ###

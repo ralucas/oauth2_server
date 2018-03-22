@@ -7,17 +7,22 @@ defmodule Routes.Main do
 
   plug Plug.Logger
   plug :match
+
   plug Plug.Parsers, parsers: [:json],
                      pass:  ["application/vnd.api+json"],
                      json_decoder: Poison
   plug :dispatch
+
+  plug Plug.Static,
+     at: "assets",
+     from: :oauth2_server
 
   get "/" do
     conn
     |> put_resp_content_type("application/vnd.api+json")
     |> send_resp(200, Poison.encode!(%{
         "jsonapi" => %{
-          "version" => "1.0.0"
+          "version" => "1.0"
         },
         "meta" => %{
           "title" => "Oauth 2.0 Server"

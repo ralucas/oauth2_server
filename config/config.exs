@@ -18,12 +18,22 @@ use Mix.Config
 #
 # Or configure a 3rd-party app:
 
-config :logger,
-    backends: [:console],
-    level: :info,
-    utc_log: true,
-    format: "$time-$date [$level] $message {$metadata}\n"
+config :oauth2_server, :logger,
+  backends: [:console],
+  level: :info,
+  utc_log: true,
+  format: "$time-$date [$level] $message {$metadata}\n"
 
+config :oauth2_server, :registration,
+  homepage_link: "https://www.oauth.com",
+  company_logo: "logo.png",
+  oauth_logo: "logo.png",
+  title: "Oauth 2.0 Application Registration",
+  oauth_desc: "The OAuth 2.0 authorization framework enables a third-party
+   application to obtain limited access to an HTTP service, either on
+   behalf of a resource owner by orchestrating an approval interaction
+   between the resource owner and the HTTP service, or by allowing the
+   third-party application to obtain access on its own behalf."
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment

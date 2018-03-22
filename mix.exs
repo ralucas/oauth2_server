@@ -31,7 +31,8 @@ defmodule Oauth2Server.Mixfile do
     [
       {:cowboy, "~>1.0.3"},
       {:plug, "~>1.4.3"},
-      {:poison, "~>3.1"}
+      {:poison, "~>3.1"},
+      {:guardian, "~> 1.0"}
     ]
   end
 end
