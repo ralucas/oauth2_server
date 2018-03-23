@@ -20,10 +20,12 @@
       </nav>
     </div>
     <div class="container">
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="assets/<%= oauth_logo %>" alt="oauth_logo" width="144" height="144">
-        <h2><%= title %></h2>
-        <p class="lead"><%= oauth_desc %></p>
+      <div class="container">
+        <div class="py-5 text-center">
+          <img class="d-block mx-auto mb-4" src="assets/<%= oauth_logo %>" alt="oauth_logo" width="144" height="144">
+          <h2><%= title %></h2>
+          <p class="lead"><%= oauth_desc %></p>
+        </div>
       </div>
       <div class="container" style="margin-bottom:100px;">
         <form>
@@ -49,7 +51,7 @@
             <label for="applicationDesc" class="col-form-label">Application Description</label>
             <textarea class="form-control" id="applicationDesc" rows="4" placeholder="Description here..."></textarea>
           </div>
-          <div class="form-row">
+          <div class="form-group">
             <label for="redirectUrl" class="col-form-label">Oauth Redirect URL</label>
             <input type="text" class="form-control" id="redirectUrl" placeholder="https://www.example.com/redirect">
           </div>
